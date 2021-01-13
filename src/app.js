@@ -5,8 +5,8 @@ require('./db/db')
 
 const app = express()
 
-app.use(express.json())
-app.use(userRouter)
+// app.use(express.json())
+app.use(userRouter, express.json())
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
