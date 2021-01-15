@@ -8,10 +8,9 @@ const router = express.Router()
 router.post('/reviews', async (req, res) => {
     
     try {
-        const user = new User(req.body)
-        await user.save()
-        const token = await user.generateAuthToken()
-        res.status(201).send({ user, token })
+        const review = new Review(req.body)
+        await review.save()
+        res.status(201).send({ review })
     } catch (error) {
         res.status(400).send(error)
     }
