@@ -13,7 +13,11 @@ const foodSchema = mongoose.Schema({
         type: mongoose.Decimal128,
         required: true,
         default: 0
-    }
+    },
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }]
 })
 
 const Food = mongoose.model('Food', foodSchema)
