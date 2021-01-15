@@ -26,7 +26,9 @@ const userSchema = mongoose.Schema({
         }
     },
     permissionLevel: {
-        type: Number
+        type: Number,
+        required: true,
+        default: 1
     },
     password: {
         type: String,
